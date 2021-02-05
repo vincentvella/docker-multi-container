@@ -13,4 +13,4 @@ e688c31fed74e9bdca55180d6bbb4351c7c41e63b66a5a26e366f804e8199c1e```
 Build Docker Frontend:
 ```docker build -t goals-react .```
 Run Docker Frontend:
-```docker run -it --name goals-frontend --rm -p 3000:3000 goals-react```
+```docker run -v /Users/vvella/Workspace/Kubernetes/docker-multi-container/frontend/src:/usr/src/app/src -it --name goals-frontend --rm --network goals-net -p 3000:3000 goals-react```
