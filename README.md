@@ -7,7 +7,7 @@ Dockerizing MongoDB Database:
 Build Docker Backend:
 ```docker build -t goals-node .```
 Run Docker Backend:
-```docker run --name goals-backend -d --rm --network goals-net -p 80:80 goals-node```
+```docker run --name goals-backend -d --rm --network goals-net -v /Users/vvella/Workspace/Kubernetes/docker-multi-container/backend:/usr/src/app -v logs:/usr/src/app/logs -v /usr/src/app/node_modules  -p 80:80 goals-node```
 
 Build Docker Frontend:
 ```docker build -t goals-react .```
