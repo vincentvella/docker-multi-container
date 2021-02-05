@@ -7,7 +7,8 @@ Dockerizing MongoDB Database:
 Build Docker Backend:
 ```docker build -t goals-node .```
 Run Docker Backend:
-```docker run --name goals-backend -d --rm --network goals-net -v /Users/vvella/Workspace/Kubernetes/docker-multi-container/backend:/usr/src/app -v logs:/usr/src/app/logs -v /usr/src/app/node_modules  -p 80:80 goals-node```
+```docker run --name goals-backend -d --rm --network goals-net -v /Users/vvella/Workspace/Kubernetes/docker-multi-container/backend:/usr/src/app -v logs:/usr/src/app/logs -v /usr/src/app/node_modules -e MONGODB_USERNAME=vince -e MONGODB_PASSWORD=secret -p 80:80 goals-node
+e688c31fed74e9bdca55180d6bbb4351c7c41e63b66a5a26e366f804e8199c1e```
 
 Build Docker Frontend:
 ```docker build -t goals-react .```
