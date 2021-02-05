@@ -2,7 +2,7 @@ Create network:
 ```docker create network goals-net```
 
 Dockerizing MongoDB Database:
-```docker run --name mongodb --rm -d --network goals-net -v data:/data/db mongo```
+```docker run --name mongodb --rm -d --network goals-net -v data:/data/db -e MONGO_INITDB_ROOT_USERNAME=vince -e MONGO_INITDB_ROOT_PASSWORD=secret mongo```
 
 Build Docker Backend:
 ```docker build -t goals-node .```
